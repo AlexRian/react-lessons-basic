@@ -9,7 +9,7 @@ const UseRefExample = () =>{
   }
 
   return (
-    <Container title='useEffect example'>
+    <Container title='useRef example'>
       <div ref={element as React.RefObject<HTMLDivElement>}>Initial Value</div>
       <button onClick={() => updateElementText()}>Update value</button>
     </Container>

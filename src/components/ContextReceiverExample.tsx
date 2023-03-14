@@ -9,7 +9,8 @@ const ContextReceiverExample = () =>{
     <Container title="Component that received context!">
       <div>I got message from context!</div>
       <div>{context.message}</div>
-      <button onClick={()=>context.setMessage('I updated context')}>Update context</button>
+      <div>{context.name}</div>
+      <button onClick={()=>context.updateValues('I updated context', 'Alex')}>Update context</button>
     </Container>
   )
 }

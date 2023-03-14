@@ -12,19 +12,27 @@ import PassingMethodExample from "./components/PassingMethodExample";
 
 interface ContextData{
   message:string,
-  setMessage:Dispatch<SetStateAction<string>>,
+  name:string,
+  updateValues: (message:string, name:string) => void,
 }
 
 export const GlobalData = createContext<ContextData>({
   message: '',
-  setMessage: ()=>{}
+  name: '',
+  updateValues: (message:string, name:string)=>{},
 });
 
 const App = () => {
   const [message, setMessage] = useState<string>('Hello from Context!');
+  const [name, setName] = useState<string>('mark');
+
+  const updateValues = (message:string, name:string) => {
+    setName(name);
+    setMessage(message);
+  }
 
   return (
-    <GlobalData.Provider value={{message, setMessage}}>
+    <GlobalData.Provider value={{message, name, updateValues}}>
       <div>
         <ComponentExample />
         <ComponentWithProps title={'My title'} />

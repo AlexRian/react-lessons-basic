@@ -1,13 +1,13 @@
-import { useMemo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 import Container from "../common/Container";
 
-const ChildElement = (props:{name:string, age:number}) => {
+const ChildElement = memo((props:{name:string, age:number}) => {
   const calculatedPerson = useMemo(() => `${props.name} ${props.age}`, [props.age]);
 
   return(
     <h5>{calculatedPerson}</h5>
   )
-}
+})
 
 const UseMemoExample = () =>{
   const [name, setName] = useState<string>('Alex');

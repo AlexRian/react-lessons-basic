@@ -12,7 +12,7 @@ const PassingMethodExample = () =>{
 
   return (
     <Container title='Passing Method Example example'>
-      <h5>{name}</h5>
+      {name.length < 4 ? <h5>{name}</h5> : null}
       <ChildElement updateName={setName}/>
     </Container>
   )
