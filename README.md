@@ -1,2 +1,2 @@
 # react-lessons-basic
-### Basic components for learning react
+### Basic components for learning react concepts
